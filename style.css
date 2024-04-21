@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body {
+    background-color: #fff;
+    padding: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+    
+}
+
+.grid-wrapper > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.grid-wrapper > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-auto-rows: 200px;
+    grid-auto-flow: dense;
+    
+ 
+}
+
+.grid-wrapper .wide {
+    grid-column: span 2;
+}
+
+.grid-wrapper .tall {
+    grid-row: span 2;
+}
+
+.grid-wrapper .big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+#undoButton {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.expanded {
+    transform: scale(2);
+    z-index: 1;
+}
+
+.grid-wrapper.expanded-bg {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.card-container {
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+}
+
+
+
+/* Progress Circle */
+.continer{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.skill{
+    width: 160px;
+    height: 160px;
+    /* background-color: orangered; */
+    position: relative;
+}
+.outer{
+    height: 160px;
+    width: 160px;
+ box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+ padding: 20px;
+}
+.inner{
+    height: 120px;
+    width: 120px;
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+    0px 12px 10px -10px rgba(0, 0, 0, 0.5) ;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* z-index: -10; */
+}
+.number{
+    font-weight: 600;
+    color: #555;
+    font-size: 30px;
+}
+circle{
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 450;
+    stroke-dashoffset: 450;
+    animation: anim 2s linear forwards;
+}
+@keyframes anim {
+    100%{
+        stroke-dashoffset:calc(450 - (450 * var(--percentage) / 100));;
+    }
+    
+}
+svg{
+    position: absolute;
+}
+.btn{
+    margin-left: 45px; 
+    position: relative;
+     top: 1px;
+      border-radius: 20px; 
+      border: none; 
+      height: 30px;
+       width: 100px;
+        background-color: purple; 
+        color: white;
+}
+.btn:hover{
+    background-color: rgb(252, 0, 252);
+}
